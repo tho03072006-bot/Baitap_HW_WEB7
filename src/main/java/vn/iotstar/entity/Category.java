@@ -10,13 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Entity Category - anh xa toi bang "HW7Categories".
- * LUU Y: file huong dan goc dat ten bang la "Categories", nhung o day doi thanh
- * "HW7Categories" de KHONG trung/dung do voi bang "categories" da co san trong
- * cung database tu bai tap truoc (SQL Server mac dinh so sanh ten bang KHONG phan
- * biet hoa/thuong nen "Categories" va "categories" se bi xem la MOT bang).
- */
+// Entity Category - anh xa bang "HW7Categories" (doi ten de tranh trung voi bang "categories" da co san trong DB webst2)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,8 +30,7 @@ public class Category implements Serializable {
 	@Column(length = 200)
 	private String icon;
 
-	// 1 Category co nhieu Product. Dung @JsonIgnore de tranh vong lap vo han
-	// khi Product -> Category -> Product -> ... luc chuyen sang JSON.
+	// 1 Category co nhieu Product. @JsonIgnore tranh vong lap khi chuyen sang JSON.
 	@JsonIgnore
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private Set<Product> products;

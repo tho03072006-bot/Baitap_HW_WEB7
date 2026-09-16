@@ -16,10 +16,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Baitap_HW_WEB7</name>
-	<description>
-		Bai tap ve nha (Phan 2): CRUD API Category tren Spring Boot 3.1.5,
-		cau hinh Swagger 3 (springdoc-openapi), va AJAX voi RESTful API cho Category + Product.
-	</description>
+	<description>CRUD API Category tren Spring Boot 3.1.5, Swagger 3 (springdoc-openapi), AJAX RESTful API cho Category va Product</description>
 
 	<properties>
 		<java.version>17</java.version>
@@ -60,42 +57,33 @@
 			<version>3.0.1</version>
 		</dependency>
 
-		<!-- SQL Server JDBC driver (mon hoc dung SQL Server, KHONG dung MySQL) -->
+		<!-- SQL Server JDBC driver -->
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Lombok: sinh getter/setter/constructor tu dong (@Data...) -->
+		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 
-		<!-- Cau hinh file upload (Buoc 1) -->
+		<!-- Cau hinh file upload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
 
-		<!--
-			Swagger 3 / OpenAPI cho Spring Boot 3.1.5.
-			LUU Y: file huong dan goc co ghi them "io.springfox:springfox-swagger-ui:3.0.0",
-			nhung thu vien nay CHUA nang cap sang Jakarta EE (van dung javax.servlet) nen
-			KHONG tuong thich voi Spring Boot 3 (se loi "Failed to start bean
-			'documentationPluginsBootstrapper'" khi chay). Vi vay chi giu lai
-			springdoc-openapi-starter-webmvc-ui (dung chuan cho Spring Boot 3 / Jakarta),
-			van dung dung version 2.0.2 nhu file huong dan.
-		-->
+		<!-- Swagger 3 / OpenAPI cho Spring Boot 3.1.5 (springdoc, tuong thich Jakarta EE) -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>

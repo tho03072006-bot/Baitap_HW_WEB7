@@ -10,10 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * Entity Product - anh xa toi bang "HW7Products" (doi ten tuong tu Category,
- * xem giai thich trong Category.java).
- */
+// Entity Product - anh xa bang "HW7Products"
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,7 +33,7 @@ public class Product implements Serializable {
 	@Column(nullable = false)
 	private double unitPrice;
 
-	// Ten file anh da luu tren server (vd: p3.png), KHONG phai duong dan day du
+	// Ten file anh da luu tren server (vd: p3.png)
 	@Column(length = 200)
 	private String images;
 
@@ -47,9 +44,6 @@ public class Product implements Serializable {
 	private double discount;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	// LUU Ý: file huong dan goc ghi pattern = "YYYY-MM-DD hh:mi:ss" (cu phap SQL),
-	// da sua lai dung cu phap Java (SimpleDateFormat): "yyyy-MM-dd HH:mm:ss",
-	// neu khong se bi loi/parse sai khi format ngay gio.
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(nullable = false)
 	private Date createDate;
@@ -57,10 +51,7 @@ public class Product implements Serializable {
 	// 1 = dang ban, 0 = ngung ban
 	private short status;
 
-	// LUU Y: file huong dan goc co dat @JsonIgnore o day, nhung bo di de JSON tra ve
-	// cho trang product.jsp co the hien thi truc tiep ten Category (p.category.categoryName)
-	// ma khong can goi them API. Khong bi vong lap vo han khi serialize JSON vi ben
-	// Category.products (xem Category.java) da duoc @JsonIgnore roi.
+	// Khong @JsonIgnore de JSON tra ve kem ten Category cho product.jsp hien thi truc tiep
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
 	private Category category;
