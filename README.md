@@ -1,27 +1,19 @@
-# Baitap_HW_WEB7 - CRUD API Category + Swagger 3 + AJAX RESTful API
+# Baitap_HW_WEB7
 
-Mon Lap trinh Web (WEBPR330479) - HCMUTE. Spring Boot 3.1.5, package `vn.iotstar`, JSP + AJAX (jQuery).
+Bai tap CRUD API Category, cau hinh Swagger 3, va AJAX RESTful API cho Category + Product.
+Spring Boot 3.1.5, package `vn.iotstar`.
 
-## Noi dung da lam
+## Da lam
 
-- **CRUD API Category**: `entity/Category.java`, `repository/CategoryRepository.java`, `service/ICategoryService.java` + Impl, `controller/api/CategoryApiController.java`.
-- **CRUD API Product**: tuong tu Category, trong `controller/api/ProductApiController.java`.
-- **Swagger 3**: `springdoc-openapi-starter-webmvc-ui` (khong dung `springfox-swagger-ui` vi chua tuong thich Jakarta EE/Spring Boot 3).
-- **AJAX CRUD**: `WEB-INF/views/category.jsp`, `product.jsp` goi thang REST API bang jQuery.
+- CRUD API Category: GET/POST/PUT/DELETE tai `/api/category/...`
+- CRUD API Product: GET/POST/PUT/DELETE tai `/api/product/...`
+- Swagger 3 (springdoc-openapi): xem tai `/swagger-ui/index.html`
+- Trang AJAX (jQuery) quan ly Category va Product: `/categories`, `/products`
+- Upload icon Category, hinh Product
 
-Bang du lieu dat ten `HW7Categories` / `HW7Products` (thay vi `Categories`/`Products`) de khong trung voi bang `categories` da co san trong cung DB `webst2`.
+## Chay project
 
-## Chay project (Eclipse STS)
-
-1. File > Import > Maven > Existing Maven Projects > chon thu muc nay.
-2. File `application-secrets.properties` (chua mat khau SQL Server that) da co san, **khong commit len Git** (da o trong `.gitignore`).
-3. Neu Hibernate (`ddl-auto=update`) khong tu tao duoc bang, chay tay script `database/hw7_tables.sql` trong SSMS.
-4. Chay `Hw7Application.java`, mo trinh duyet:
-   - http://localhost:8082/ - trang chu
-   - http://localhost:8082/categories - CRUD Category (AJAX)
-   - http://localhost:8082/products - CRUD Product (AJAX)
-   - http://localhost:8082/swagger-ui/index.html - Swagger UI
-
-## Nop bai (muc 6)
-
-Da `git init` + commit cuc bo. Tao repo GitHub moi ten `Baitap_HW_WEB7` qua GitHub Desktop > Publish repository, roi nop link vao UTEXLMS.
+1. Eclipse: File > Import > Maven > Existing Maven Projects > chon thu muc nay.
+2. File `application-secrets.properties` (chua mat khau SQL Server that) da co san, khong commit len Git.
+3. Chay `Hw7Application.java`.
+4. Mo trinh duyet: http://localhost:8082/
