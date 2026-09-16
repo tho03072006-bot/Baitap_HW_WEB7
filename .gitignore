@@ -1,0 +1,21 @@
+target/
+uploads/
+*.class
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# IDE khac
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Mat khau that - KHONG duoc push len GitHub
+application-secrets.properties
